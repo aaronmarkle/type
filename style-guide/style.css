@@ -1,0 +1,43 @@
+body {
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-size: 72px;
+}
+
+h3 {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-size: 60px;
+}
+
+p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 36px;
+}
+
+.primary {
+  background-color: #ff9700;
+  color: #fff;
+}
+
+.color-two {
+  background-color: #d98000;
+  color: #fff;
+}
+
+.color-three {
+  background-color: #a76300;
+  color: #fff;
+}
+
+.color-four {
+  background-color: #ffc570;
+  color: #000;
+}
+
+.color-five {
+  background-color: #ffdaa4;
+  color: #000;
+}
