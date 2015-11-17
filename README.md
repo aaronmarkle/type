@@ -1,0 +1,1 @@
+A website for kids who want to improve their typing speed.
