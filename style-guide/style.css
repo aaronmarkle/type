@@ -14,7 +14,16 @@ p {
   color: #111;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
 .primary {
+  position: relative;
   display: inline-block;
   width: 200px;
   height: 200px;
@@ -24,6 +33,7 @@ p {
 }
 
 .color-two {
+  position: relative;
   display: inline-block;
   width: 200px;
   height: 200px;
@@ -33,6 +43,7 @@ p {
 }
 
 .color-three {
+  position: relative;
   display: inline-block;
   width: 200px;
   height: 200px;
@@ -42,6 +53,7 @@ p {
 }
 
 .color-four {
+  position: relative;
   display: inline-block;
   width: 200px;
   height: 200px;
@@ -51,6 +63,7 @@ p {
 }
 
 .color-five {
+  position: relative;
   display: inline-block;
   width: 200px;
   height: 200px;
@@ -60,6 +73,7 @@ p {
 }
 
 .bg-one {
+  position: relative;
   display: inline-block;
   width: 200px;
   height: 200px;
@@ -69,10 +83,21 @@ p {
 }
 
 .bg-two {
+  position: relative;
   display: inline-block;
   width: 200px;
   height: 200px;
   background-color: #ded7d2;
   color: #000;
   margin: 10px;
+}
+
+.overlay {
+  position: relative;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255,255,255,.5);
 }
