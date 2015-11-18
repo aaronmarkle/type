@@ -5,39 +5,74 @@ body {
 h2 {
   font-family: 'Roboto', Helvetica, sans-serif;
   font-size: 72px;
-}
-
-h3 {
-  font-family: 'Roboto', Helvetica, sans-serif;
-  font-size: 60px;
+  color: #111;
 }
 
 p {
   font-family: 'Roboto Slab', serif;
   font-size: 36px;
+  color: #111;
 }
 
 .primary {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
   background-color: #ff9700;
   color: #fff;
+  margin: 10px;
 }
 
 .color-two {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
   background-color: #d98000;
   color: #fff;
+  margin: 10px;
 }
 
 .color-three {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
   background-color: #a76300;
   color: #fff;
+  margin: 10px;
 }
 
 .color-four {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
   background-color: #ffc570;
   color: #000;
+  margin: 10px;
 }
 
 .color-five {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
   background-color: #ffdaa4;
   color: #000;
+  margin: 10px;
+}
+
+.bg-one {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: #505050;
+  color: #000;
+  margin: 10px;
+}
+
+.bg-two {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: #ded7d2;
+  color: #000;
+  margin: 10px;
 }
