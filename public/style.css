@@ -1,5 +1,6 @@
 body {
-  background-color: rgba(255,151,0,.2);
+  /* background-color: rgba(255,151,0,.2); */
+  background-image: url(images/school.png);
 }
 
 #game-screen {
@@ -9,7 +10,7 @@ body {
 .btn-orange {
   color: #fff;
   background-color: #ff9700;
-  border-color: #ff9700;
+  border: 2px solid #fff;
   margin: 15px 5px;
 }
 
