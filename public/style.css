@@ -1,12 +1,20 @@
 body {
-
+  background-color: rgba(255,151,0,.2);
 }
 
 #game-screen {
-
+  margin: 30px 10px;
 }
 
-.btn-primary {
+.btn-orange {
+  color: #fff;
   background-color: #ff9700;
   border-color: #ff9700;
+  margin: 15px 5px;
+}
+
+.btn-orange:hover {
+  color: #fff;
+  background-color: #d98000; 
+  border-color: #d98000;
 }
