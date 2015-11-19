@@ -11,7 +11,7 @@ body {
   color: #fff;
   background-color: #ff9700;
   border: 2px solid #fff;
-  margin: 15px 5px;
+  margin: 15px 5px !important; /*submit feedback button on modal wasn't getting margin added*/
 }
 
 .btn-orange:hover {
