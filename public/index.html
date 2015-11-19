@@ -13,29 +13,24 @@
   <button class="btn btn-lg btn-orange" data-toggle="modal" data-target="#feedback-modal" type="button">Submit Feedback</button>
 
   <div id="game-screen" class="container-fluid">
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-          <img class="img-responsive center-block" src="images/game-console.png">
+    <div class="row helper-holder">
+      <div class="col-xs-8 col-xs-offset-1">
+        <img id="sample-game" class="img-responsive center-block" src="images/game-console.png">
+      </div>
+      <div id="lego-helper" class="col-xs-2 bottom">
+        <img class="img-responsive" src="images/lego-helper-happy.png">
       </div>
     </div>
+
+
     <div class="row">
-      <div class="col-sm-8 col-sm-offset-2 text-center">
+      <div class="col-xs-10 col-xs-offset-1 text-center">
         <button class="btn btn-lg btn-orange">New Game</button>
         <button class="btn btn-lg btn-orange">Submit Score</button>
         <button class="btn btn-lg btn-orange">View High Scores</button>
       </div>
     </div>
   </div>
-
-
-
-<!-- Lego Helper -->
-  <div id="lego-helper">
-    <img class="img-responsive" src="images/lego-helper-happy.png">
-  </div>
-
-
-<!-- End of Lego Helper -->
 
 <!-- Feedback Modal -->
   <div id="feedback-modal" class="modal fade" tabindex="-1">

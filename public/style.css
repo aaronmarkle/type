@@ -5,6 +5,11 @@ body {
 
 #game-screen {
   margin: 30px 10px;
+  max-width: 1600px;
+}
+
+#sample-game {
+
 }
 
 .btn-orange {
@@ -20,9 +25,12 @@ body {
   border-color: #d98000;
 }
 
+.helper-holder {
+  position:relative;
+}
+
 #lego-helper {
-  position: fixed;
-  bottom: 0;
+  position:absolute;
+  bottom: 25%;
   right: 5%;
-  width: 300px;
 }
