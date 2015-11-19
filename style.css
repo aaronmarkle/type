@@ -8,10 +8,6 @@ body {
   max-width: 1600px;
 }
 
-#sample-game {
-
-}
-
 .btn-orange {
   color: #fff;
   background-color: #ff9700;
@@ -31,6 +27,6 @@ body {
 
 #lego-helper {
   position:absolute;
-  bottom: 25%;
-  right: 5%;
+  bottom: 20%;
+  right: 0;
 }
