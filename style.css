@@ -30,3 +30,27 @@ body {
   bottom: 20%;
   right: 0;
 }
+
+#leaderboards {
+  border-top: 2px solid #fff;
+  padding: 30px 0;
+  margin: 0 40px;
+}
+
+.rankings {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+th {
+  font-size: 24px;
+}
+
+td {
+  font-size: 18px;
+}
+
+.timespan {
+  text-align: center;
+  font-size: 36px;
+}
