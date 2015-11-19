@@ -19,3 +19,10 @@ body {
   background-color: #d98000; 
   border-color: #d98000;
 }
+
+#lego-helper {
+  position: fixed;
+  bottom: 0;
+  right: 5%;
+  width: 300px;
+}
