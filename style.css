@@ -4,6 +4,16 @@ body {
   font-family: 'Avenir Next' !important;
 }
 
+#btn-feedback {
+  position: fixed;
+  top: 0;
+  right: 5%;
+  margin: 0;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  z-index: 20;
+}
+
 #game-screen {
   margin: 30px 10px;
   max-width: 1600px;
@@ -12,8 +22,7 @@ body {
 .btn-orange {
   color: #fff;
   background-color: #ff9700;
-  border: 2px solid #fff;
-  margin: 15px 5px !important; /*submit feedback button on modal wasn't getting margin added*/
+  margin: 15px 5px;
 }
 
 .btn-orange:hover {
