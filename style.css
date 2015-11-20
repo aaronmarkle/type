@@ -40,6 +40,7 @@ body {
 .rankings {
   border-radius: 10px;
   box-shadow: 5px 5px 5px #111;
+  background-color: #fff;
 }
 
 th {
@@ -58,7 +59,7 @@ td {
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: rgba(255,151,0,.2);
+
 }
 
 .table-striped > tbody > tr:nth-of-type(even) {
