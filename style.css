@@ -55,16 +55,16 @@ body {
 }
 
 th {
-  font-size: 22px;
+  font-size: 16px;
 }
 
 td {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .timespan {
   text-align: center;
-  font-size: 36px;
+  font-size: 24px;
   background-color: #ff9700;
   color: #fff;
 }
