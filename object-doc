@@ -1,0 +1,21 @@
+Lego-Man
+  Face
+  Message
+
+Type Text
+  Text
+  Current Letter
+
+Score
+  Time
+  Words
+  WPM
+
+User
+  Name
+  Age
+
+Feedback
+  Name
+  Email
+  Message
