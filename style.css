@@ -1,6 +1,7 @@
 body {
   /* background-color: rgba(255,151,0,.2); */
   background-image: url(images/school.png);
+  font-family: 'Avenir Next' !important;
 }
 
 #game-screen {
@@ -33,6 +34,7 @@ body {
 
 #leaderboards {
   border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
   padding: 30px 0;
   margin: 0 40px;
 }
@@ -44,7 +46,7 @@ body {
 }
 
 th {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 td {
