@@ -23,12 +23,19 @@ body {
   color: #fff;
   background-color: #ff9700;
   margin: 15px 5px;
+  box-shadow: 0 3px 0 0 #d98000;
 }
 
-.btn-orange:hover {
+.btn-orange:hover{
   color: #fff;
-  background-color: #d98000; 
-  border-color: #d98000;
+}
+
+.btn-orange:active, .btn-orange:active {
+  color: #fff;
+  background: #d98000;
+  box-shadow: none;
+  margin-bottom: -3px;
+  margin-top: 3px;
 }
 
 .helper-holder {
