@@ -39,6 +39,11 @@ body {
   margin-top: 3px;
 }
 
+.btn-game {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .helper-holder {
   position:relative;
 }
