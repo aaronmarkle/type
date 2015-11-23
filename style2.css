@@ -1,0 +1,104 @@
+body {
+  /* background-color: rgba(255,151,0,.2); */
+  background-image: url(images/school.png);
+  font-family: 'Avenir Next' !important;
+}
+
+#btn-feedback {
+  position: fixed;
+  top: 0;
+  right: 8%;
+  margin: 0;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  z-index: 20;
+}
+
+#game-screen {
+  background-image: url('images/game-screen.png') !important;
+  height: 768px;
+  width: 696px;
+  margin-top: 50px;
+}
+
+.game-copy {
+  letter-spacing: 10px;
+  width: 650px;
+  font-size: 72px;
+  padding: 25px 70px;
+}
+
+.btn-orange {
+  color: #fff !important;
+  background-color: #ff9700;
+  margin: 15px 5px;
+  box-shadow: 0 3px 0 0 #d98000;
+  outline: none !important;
+}
+
+.btn-orange:hover, .btn-orange:visited {
+  color: #fff;
+}
+
+.btn-orange:active, .btn-orange:active {
+  color: #fff;
+  background: #ff9700;
+  box-shadow: none;
+  margin-bottom: -3px;
+  margin-top: 3px;
+}
+
+.btn-game {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.helper-holder {
+  position:relative;
+}
+
+#lego-helper {
+  position:absolute;
+  bottom: 20%;
+  right: 0;
+}
+
+#leaderboards {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  padding: 30px 0;
+  margin: 0 40px;
+}
+
+.rankings {
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #111;
+  background-color: #fff;
+}
+
+th {
+  font-size: 16px;
+}
+
+td {
+  font-size: 16px;
+}
+
+.timespan {
+  text-align: center;
+  font-size: 24px;
+  background-color: #ff9700;
+  color: #fff;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: rgba(255,151,0,.4);
+}
+
+#feedback-modal {
+  margin-top: 15%;
+}
