@@ -20,19 +20,19 @@ body {
 }
 
 .btn-orange {
-  color: #fff;
+  color: #fff !important;
   background-color: #ff9700;
   margin: 15px 5px;
   box-shadow: 0 3px 0 0 #d98000;
 }
 
-.btn-orange:hover{
+.btn-orange:hover, .btn-orange:visited {
   color: #fff;
 }
 
 .btn-orange:active, .btn-orange:active {
   color: #fff;
-  background: #d98000;
+  background: #ff9700;
   box-shadow: none;
   margin-bottom: -3px;
   margin-top: 3px;
@@ -82,4 +82,12 @@ td {
 
 .table-striped > tbody > tr:nth-of-type(even) {
   background-color: rgba(255,151,0,.4);
+}
+
+#feedback-modal {
+  margin-top: 15%;
+}
+
+#feedback-submit {
+  margin-bottom: 15px;
 }
