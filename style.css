@@ -24,6 +24,7 @@ body {
   background-color: #ff9700;
   margin: 15px 5px;
   box-shadow: 0 3px 0 0 #d98000;
+  outline: none !important;
 }
 
 .btn-orange:hover, .btn-orange:visited {
