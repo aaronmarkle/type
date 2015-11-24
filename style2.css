@@ -4,6 +4,10 @@ body {
   font-family: 'Avenir Next' !important;
 }
 
+#sorry {
+  margin-top: 40px;
+}
+
 #btn-feedback {
   position: fixed;
   top: 0;
@@ -26,6 +30,10 @@ body {
   width: 650px;
   font-size: 72px;
   padding: 25px 70px;
+}
+
+.current-letter {
+  color: #ff9700;
 }
 
 .btn-orange {
