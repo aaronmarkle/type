@@ -4,6 +4,10 @@ body {
   font-family: 'Avenir Next' !important;
 }
 
+#sorry {
+  margin-top: 40px;
+}
+
 #btn-feedback {
   position: fixed;
   top: 0;
@@ -15,8 +19,21 @@ body {
 }
 
 #game-screen {
-  margin: 30px 10px;
-  max-width: 1600px;
+  background-image: url('../images/game-screen.png') !important;
+  height: 768px;
+  width: 696px;
+  margin-top: 50px;
+}
+
+#game-copy {
+  letter-spacing: 10px;
+  width: 650px;
+  font-size: 72px;
+  padding: 25px 70px;
+}
+
+.current-letter {
+  color: #ff9700;
 }
 
 .btn-orange {
