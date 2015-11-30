@@ -32,10 +32,6 @@ body {
   padding: 25px 70px;
 }
 
-.current-letter {
-  color: #ff9700;
-}
-
 .btn-orange {
   color: #fff !important;
   background-color: #ff9700;
@@ -109,4 +105,8 @@ td {
 
 #feedback-modal {
   margin-top: 15%;
+}
+
+.highlight {
+  background-color: #ff9700;
 }
