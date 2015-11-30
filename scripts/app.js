@@ -21,6 +21,7 @@ $("#expert").click(function() {
   this.blur(); //de-focus button
   testCopy.textContent = expert;
   testToArray();
+  drawScreen();
 });
 
 var testToArray = function() {
@@ -35,13 +36,15 @@ document.addEventListener('keypress', function(event) {
   event.preventDefault(); //prevent space bar from scrolling window
   if (String.fromCharCode(event.which) == currentLetter) {
     console.log('Correct!');
+    testArray[currentLocation] = currentLetter;
     currentLocation++;
     currentLetter = testArray[currentLocation];
+    drawScreen();
     if (currentLocation == testArray.length) {
       console.log('WIN!');
       //end timer
       endTime = Date.now();
-      totalTime = (endTime - startTime) / 1000;
+      totalTime = (endTime - sdtartTime) / 1000;
       var lpm = (testArray.length / totalTime);
       console.log('You typed ' + lpm + ' letters per second!')
     }
@@ -53,32 +56,21 @@ document.addEventListener('keypress', function(event) {
   }
   , false);
 
-
-
-/* Steps for game
-
-Grab current test text
-Convert to array with each letter character being its own item
-Set first letter to currentLetter
-Listen for keypress
-When currentLetter key pressed, go to next letter
-
-*/
-
-
-
-/* pseudo code
-
-on keypress {
-  counter = 0;
-  if (key pressed == currentLetter) {
-    counter++;
-    if (counter == testArray.length) {
-      game ends
-      display score
-    }
-    currentLetter = testArray[counter]
-  }
+var drawScreen = function() {
+  testArray[currentLocation] = '<span class="highlight">' + currentLetter + '</span>';
+  console.log(testArray);
+  testCopy.innerHTML = testArray.join('');
 }
 
-*/
+
+
+
+
+
+
+
+
+
+
+
+
