@@ -24,17 +24,24 @@ $("#expert").click(function() {
 });
 
 var testToArray = function() {
+  currentLocation = 0;
   testArray = testCopy.textContent.split('');
-  currentLetter = testArray[0];
+  currentLetter = testArray[currentLocation];
   console.log(currentLetter);
   console.log(testArray.length);
 }
 
 document.addEventListener('keypress', function(event) {
+  event.preventDefault();
   if (String.fromCharCode(event.which) == currentLetter) {
-    console.log("Correct!")
+    console.log("Correct!");
+    currentLocation++;
+    currentLetter = testArray[currentLocation];
+    if (currentLocation == testArray.length) {
+      console.log("WIN!");
+    }
   }
-  console.log(event.which);}
+  }
   , false);
 
 
