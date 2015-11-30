@@ -9,12 +9,14 @@ $("#alphabet").click(function() {
   this.blur(); //de-focus button
   testCopy.textContent = alphabet;
   testToArray();
+  drawScreen();
 });
 
 $("#beginner").click(function() {
   this.blur(); //de-focus button
   testCopy.textContent = beginner;
   testToArray();
+  drawScreen();
 });
 
 $("#expert").click(function() {
@@ -39,14 +41,18 @@ document.addEventListener('keypress', function(event) {
     testArray[currentLocation] = currentLetter;
     currentLocation++;
     currentLetter = testArray[currentLocation];
-    drawScreen();
     if (currentLocation == testArray.length) {
       console.log('WIN!');
       //end timer
       endTime = Date.now();
-      totalTime = (endTime - sdtartTime) / 1000;
-      var lpm = (testArray.length / totalTime);
-      console.log('You typed ' + lpm + ' letters per second!')
+      totalTime = (endTime - startTime) / 1000;
+      var lpm = (testArray.length / totalTime).toFixed(2);
+      console.log('You typed ' + lpm + ' letters per second!');
+
+      testCopy.textContent = 'You typed ' + lpm + ' letters per second!';
+    }
+    else {
+      drawScreen();
     }
   }
   if (currentLocation == 1) {
@@ -58,7 +64,6 @@ document.addEventListener('keypress', function(event) {
 
 var drawScreen = function() {
   testArray[currentLocation] = '<span class="highlight">' + currentLetter + '</span>';
-  console.log(testArray);
   testCopy.innerHTML = testArray.join('');
 }
 
