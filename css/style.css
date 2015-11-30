@@ -112,5 +112,6 @@ td {
 }
 
 .highlightSpace {
-  border: 1px solid #ff9700;
+  border-left: 1px solid #ff9700;
+  letter-spacing: 9px;
 }
