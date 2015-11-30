@@ -32,14 +32,21 @@ var testToArray = function() {
 }
 
 document.addEventListener('keypress', function(event) {
-  event.preventDefault();
+  event.preventDefault(); //prevent space bar from scrolling window
   if (String.fromCharCode(event.which) == currentLetter) {
     console.log("Correct!");
     currentLocation++;
     currentLetter = testArray[currentLocation];
     if (currentLocation == testArray.length) {
       console.log("WIN!");
+      //end timer
+      endTime = Date.now();
+      console.log(endTime - startTime);
     }
+  }
+  if (currentLocation == 1) {
+    // start timer
+    startTime = Date.now();
   }
   }
   , false);
