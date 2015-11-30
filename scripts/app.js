@@ -34,14 +34,16 @@ var testToArray = function() {
 document.addEventListener('keypress', function(event) {
   event.preventDefault(); //prevent space bar from scrolling window
   if (String.fromCharCode(event.which) == currentLetter) {
-    console.log("Correct!");
+    console.log('Correct!');
     currentLocation++;
     currentLetter = testArray[currentLocation];
     if (currentLocation == testArray.length) {
-      console.log("WIN!");
+      console.log('WIN!');
       //end timer
       endTime = Date.now();
-      console.log(endTime - startTime);
+      totalTime = (endTime - startTime) / 1000;
+      var lpm = (testArray.length / totalTime);
+      console.log('You typed ' + lpm + ' letters per second!')
     }
   }
   if (currentLocation == 1) {
