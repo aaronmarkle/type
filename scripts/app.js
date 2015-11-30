@@ -63,7 +63,12 @@ document.addEventListener('keypress', function(event) {
   , false);
 
 var drawScreen = function() {
-  testArray[currentLocation] = '<span class="highlight">' + currentLetter + '</span>';
+  if (currentLetter == ' ') {
+    testArray[currentLocation] = '<span class="highlightSpace">' + currentLetter + '</span>';
+  } 
+  else {
+    testArray[currentLocation] = '<span class="highlight">' + currentLetter + '</span>';
+  }
   testCopy.innerHTML = testArray.join('');
 }
 

@@ -110,3 +110,7 @@ td {
 .highlight {
   color: #ff9700;
 }
+
+.highlightSpace {
+  border: 1px solid #ff9700;
+}
