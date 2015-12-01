@@ -105,7 +105,24 @@ td {
 }
 
 #feedback-modal {
-  margin-top: 15%;
+  margin-top: 10%;
+}
+
+.btn-modal {
+  color: #fff !important;
+  background-color: #ff9700;
+  margin: 0;
+  outline: none !important;
+}
+
+.btn-modal:hover, .btn-modal:visited {
+  color: #fff;
+}
+
+.btn-modal:active, .btn-modal:active {
+  color: #fff;
+  background: #ff9700;
+  box-shadow: none;
 }
 
 .highlight {
