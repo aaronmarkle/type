@@ -30,7 +30,7 @@ body {
   width: 696px;
   margin-top: 10px;
   margin-bottom: 10px;
-  word-wrap: break-word !important;
+  word-wrap: break-word;
 }
 
 #game-copy {
