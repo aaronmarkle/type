@@ -15,7 +15,13 @@ body {
   margin: 0;
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
+  border-bottom: 2px solid #d98000;
   z-index: 20;
+}
+
+.button-row {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 #game-screen {
@@ -23,7 +29,7 @@ body {
   height: 768px;
   width: 696px;
   margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 #game-copy {
@@ -36,7 +42,7 @@ body {
 .btn-orange {
   color: #fff !important;
   background-color: #ff9700;
-  margin: 15px 5px;
+  margin: 0px 5px;
   box-shadow: 0 3px 0 0 #d98000;
   outline: none !important;
 }
@@ -132,4 +138,8 @@ td {
 .highlightSpace {
   border-left: 2px solid #ff9700;
   letter-spacing: 8px;
+}
+
+.footer {
+  margin-bottom: 20px;
 }
