@@ -30,25 +30,19 @@ var gameToArray = function() {
   currentLocation = 0;
   gameArray = gameCopy.textContent.split('');
   currentLetter = gameArray[currentLocation];
-  console.log(currentLetter);
-  console.log(gameArray.length);
 }
 
 document.addEventListener('keypress', function(event) {
   event.preventDefault(); //prevent space bar from scrolling window
   if (String.fromCharCode(event.which) == currentLetter) {
-    console.log('Correct!');
     gameArray[currentLocation] = currentLetter;
     currentLocation++;
     currentLetter = gameArray[currentLocation];
     if (currentLocation == gameArray.length) {
-      console.log('WIN!');
       //end timer
       endTime = Date.now();
       totalTime = (endTime - startTime) / 1000;
       var lpm = (gameArray.length / totalTime).toFixed(2);
-      console.log('You typed ' + lpm + ' letters per second!');
-
       gameCopy.textContent = 'You typed ' + lpm + ' letters per second!';
     }
     else {
