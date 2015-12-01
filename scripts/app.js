@@ -50,11 +50,12 @@ var gameToArray = function() {
 
 // Keypress listener
 document.addEventListener('keypress', function(event) {
+  // Check to see if any of the text inputs are in focus
   if (document.getElementById('user-name') === document.activeElement
     || document.getElementById('user-email') === document.activeElement
     || document.getElementById('user-age') === document.activeElement
     || document.getElementById('user-comments') === document.activeElement) {
-  // Check to see if a form input is selected, and act normally if it is
+  // Act normally (no preventDefault)
   }
   else {
     event.preventDefault(); //prevent space bar from scrolling window
@@ -82,6 +83,7 @@ document.addEventListener('keypress', function(event) {
     }
   }
 }, false);
+
 // Redraws gamescreen on each correct keypress to highlight the current letter
 var drawScreen = function() {
   if (currentLetter == ' ') {
@@ -93,6 +95,7 @@ var drawScreen = function() {
   gameCopy.innerHTML = gameArray.join('');
 }
 
+// Displays win screen
 var finish = function() {
   endTime = Date.now();
   totalTime = (endTime - startTime) / 1000;
