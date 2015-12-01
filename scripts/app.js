@@ -84,16 +84,3 @@ var finish = function() {
   var lpm = (gameArray.length / totalTime).toFixed(2);
   gameCopy.textContent = 'You typed ' + lpm + ' letters per second!';
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
