@@ -10,6 +10,7 @@ var gameCopy = document.getElementById('game-copy');
 var alphabetButton = document.getElementById('alphabet');
 alphabetButton.addEventListener('click', function() {
   this.blur(); //de-focus button
+  gameCopy.classList.remove('finishMessage');
   gameCopy.textContent = alphabet;
   gameToArray();
   drawScreen();
@@ -18,6 +19,7 @@ alphabetButton.addEventListener('click', function() {
 var beginnerButton = document.getElementById('beginner');
 beginnerButton.addEventListener('click', function() {
   this.blur(); //de-focus button
+  gameCopy.classList.remove('finishMessage');
   gameCopy.textContent = beginner;
   gameToArray();
   drawScreen();
@@ -26,6 +28,7 @@ beginnerButton.addEventListener('click', function() {
 var expertButton = document.getElementById('expert');
 expertButton.addEventListener('click', function() {
   this.blur(); //de-focus button
+  gameCopy.classList.remove('finishMessage');
   gameCopy.textContent = expert;
   gameToArray();
   drawScreen();
@@ -67,10 +70,15 @@ document.addEventListener('keypress', function(event) {
         drawScreen();
       }
     }
+    else {
+      errors++;
+    }
     // Check for first correct keypress (start of game)
     if (currentLocation == 1) {
       // Start timer
       startTime = Date.now();
+      var gameStatus = 'live';
+      errors = 0;
     }
   }
 }, false);
@@ -89,5 +97,7 @@ var finish = function() {
   endTime = Date.now();
   totalTime = (endTime - startTime) / 1000;
   var lpm = (gameArray.length / totalTime).toFixed(2);
-  gameCopy.textContent = 'You typed ' + lpm + ' letters per second!';
+  gameCopy.classList.add('finishMessage');
+  gameCopy.textContent = 'You typed ' + lpm + ' letters per second with ' + errors + ' errors!';
+  gameStatus = 'finished';
 }
