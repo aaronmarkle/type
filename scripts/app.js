@@ -39,22 +39,20 @@ var gameToArray = function() {
 document.addEventListener('keypress', function(event) {
   event.preventDefault(); //prevent space bar from scrolling window
   if (String.fromCharCode(event.which) == currentLetter) {
-    gameArray[currentLocation] = currentLetter;
+    gameArray[currentLocation] = currentLetter; //removes highlight from current letter
     currentLocation++;
     currentLetter = gameArray[currentLocation];
+    // Check for end
     if (currentLocation == gameArray.length) {
-      //end timer
-      endTime = Date.now();
-      totalTime = (endTime - startTime) / 1000;
-      var lpm = (gameArray.length / totalTime).toFixed(2);
-      gameCopy.textContent = 'You typed ' + lpm + ' letters per second!';
+      finish();
     }
     else {
       drawScreen();
     }
   }
+  // Check for first correct keypress (start of game)
   if (currentLocation == 1) {
-    // start timer
+    // Start timer
     startTime = Date.now();
   }
   }
@@ -69,6 +67,13 @@ var drawScreen = function() {
     gameArray[currentLocation] = '<span class="highlight">' + currentLetter + '</span>';
   }
   gameCopy.innerHTML = gameArray.join('');
+}
+
+var finish = function() {
+  endTime = Date.now();
+  totalTime = (endTime - startTime) / 1000;
+  var lpm = (gameArray.length / totalTime).toFixed(2);
+  gameCopy.textContent = 'You typed ' + lpm + ' letters per second!';
 }
 
 
