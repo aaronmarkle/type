@@ -1,31 +1,36 @@
 // Typing game difficulties declared
-var alphabet = "a b c d e f g h i j k l m n o p q r s t u v w x y z"
-var beginner = "cat dog hello me you yes no hi fun"
-var expert = "difficult mix floor table window pez food fishy"
+var alphabet = 'a b c d e f g h i j k l m n o p q r s t u v w x y z'
+var beginner = 'cat dog hello me you yes no hi fun'
+var expert = 'difficult mix floor table window pez food fishy'
 
 // Set reference to game screen output
-var gameCopy = document.getElementById("game-copy");
+var gameCopy = document.getElementById('game-copy');
 
 // Show game output for selected difficulty
-$("#alphabet").click(function() {
+$('#alphabet').click(function() {
   this.blur(); //de-focus button
   gameCopy.textContent = alphabet;
   gameToArray();
   drawScreen();
 });
 
-$("#beginner").click(function() {
+$('#beginner').click(function() {
   this.blur(); //de-focus button
   gameCopy.textContent = beginner;
   gameToArray();
   drawScreen();
 });
 
-$("#expert").click(function() {
+$('#expert').click(function() {
   this.blur(); //de-focus button
   gameCopy.textContent = expert;
   gameToArray();
   drawScreen();
+});
+$('#toggle-leaderboards').click(function() {
+  this.blur(); //de-focus button
+  var leaderboards = document.getElementById('leaderboards');
+  leaderboards.classList.toggle('hidden');
 });
 
 // Convert selected difficulty into array

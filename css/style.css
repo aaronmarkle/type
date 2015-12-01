@@ -22,7 +22,8 @@ body {
   background-image: url('../images/game-screen.png') !important;
   height: 768px;
   width: 696px;
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 #game-copy {
