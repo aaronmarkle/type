@@ -7,31 +7,36 @@ var expert = 'difficult mix floor table window pez food fishy'
 var gameCopy = document.getElementById('game-copy');
 
 // Show game output for selected difficulty
-$('#alphabet').click(function() {
+var alphabetButton = document.getElementById('alphabet');
+alphabetButton.addEventListener('click', function() {
   this.blur(); //de-focus button
   gameCopy.textContent = alphabet;
   gameToArray();
   drawScreen();
-});
+}, false);
 
-$('#beginner').click(function() {
+var beginnerButton = document.getElementById('beginner');
+beginnerButton.addEventListener('click', function() {
   this.blur(); //de-focus button
   gameCopy.textContent = beginner;
   gameToArray();
   drawScreen();
-});
+}, false);
 
-$('#expert').click(function() {
+var expertButton = document.getElementById('expert');
+expertButton.addEventListener('click', function() {
   this.blur(); //de-focus button
   gameCopy.textContent = expert;
   gameToArray();
   drawScreen();
-});
-$('#toggle-leaderboards').click(function() {
+}, false);
+
+var leaderboardsButton = document.getElementById('toggle-leaderboards');
+leaderboardsButton.addEventListener('click', function() {
   this.blur(); //de-focus button
   var leaderboards = document.getElementById('leaderboards');
   leaderboards.classList.toggle('hidden');
-});
+}, false);
 
 // Convert selected difficulty into array
 var gameToArray = function() {
@@ -60,8 +65,7 @@ document.addEventListener('keypress', function(event) {
     // Start timer
     startTime = Date.now();
   }
-  }
-  , false);
+  }, false);
 
 // Redraws gamescreen on each correct keypress to highlight the current letter
 var drawScreen = function() {
