@@ -47,26 +47,33 @@ var gameToArray = function() {
 
 // Keypress listener
 document.addEventListener('keypress', function(event) {
-  event.preventDefault(); //prevent space bar from scrolling window
-  if (String.fromCharCode(event.which) == currentLetter) {
-    gameArray[currentLocation] = currentLetter; //removes highlight from current letter
-    currentLocation++;
-    currentLetter = gameArray[currentLocation];
-    // Check for end
-    if (currentLocation == gameArray.length) {
-      finish();
+  if (document.getElementById('user-name') === document.activeElement
+    || document.getElementById('user-email') === document.activeElement
+    || document.getElementById('user-age') === document.activeElement
+    || document.getElementById('user-comments') === document.activeElement) {
+  // Check to see if a form input is selected, and act normally if it is
+  }
+  else {
+    event.preventDefault(); //prevent space bar from scrolling window
+    if (String.fromCharCode(event.which) == currentLetter) {
+      gameArray[currentLocation] = currentLetter; //removes highlight from current letter
+      currentLocation++;
+      currentLetter = gameArray[currentLocation];
+      // Check for end
+      if (currentLocation == gameArray.length) {
+        finish();
+      }
+      else {
+        drawScreen();
+      }
     }
-    else {
-      drawScreen();
+    // Check for first correct keypress (start of game)
+    if (currentLocation == 1) {
+      // Start timer
+      startTime = Date.now();
     }
   }
-  // Check for first correct keypress (start of game)
-  if (currentLocation == 1) {
-    // Start timer
-    startTime = Date.now();
-  }
-  }, false);
-
+}, false);
 // Redraws gamescreen on each correct keypress to highlight the current letter
 var drawScreen = function() {
   if (currentLetter == ' ') {
