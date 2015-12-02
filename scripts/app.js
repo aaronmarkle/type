@@ -51,12 +51,12 @@ document.addEventListener('keypress', function(event) {
   }
   else {
     event.preventDefault(); //prevent space bar from scrolling window
-    if (String.fromCharCode(event.which) == currentLetter) {
+    if (String.fromCharCode(event.which) === currentLetter) {
       gameArray[currentLocation] = currentLetter; //removes highlight from current letter
       currentLocation++;
       currentLetter = gameArray[currentLocation];
       // Check for end
-      if (currentLocation == gameArray.length) {
+      if (currentLocation === gameArray.length) {
         finish();
       }
       else {
@@ -78,7 +78,7 @@ document.addEventListener('keypress', function(event) {
 
 // Redraws gamescreen on each correct keypress to highlight the current letter
 var drawScreen = function() {
-  if (currentLetter == ' ') {
+  if (currentLetter === ' ') {
     gameArray[currentLocation] = '<span class="highlightSpace">' + currentLetter + '</span>';
   } 
   else {
