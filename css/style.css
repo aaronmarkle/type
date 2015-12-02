@@ -37,7 +37,7 @@ body {
   letter-spacing: 10px;
   width: 650px;
   font-size: 72px;
-  padding: 25px 70px;
+  padding: 25px 25px 25px 70px;
 }
 
 .btn-orange {
@@ -148,4 +148,5 @@ td {
 .finishMessage {
   font-size: 56px !important;
   text-align: center;
+  padding-top: 50px !important;
 }
