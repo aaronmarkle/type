@@ -1,6 +1,6 @@
 // Typing game difficulties declared
 var alphabet = 'abcdefghijklmnopqrstuvwxyz'
-var beginner = 'cat dog hello me you yes no hi fun'
+var beginner = 'cat dog hello me you yes no hi fun code cool'
 var expert = 'difficult mix floor table window pez food fishy'
 
 // Set reference to game screen output
