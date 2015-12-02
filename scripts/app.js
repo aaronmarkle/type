@@ -10,36 +10,28 @@ var gameCopy = document.getElementById('game-copy');
 var alphabetButton = document.getElementById('alphabet');
 alphabetButton.addEventListener('click', function() {
   this.blur(); //de-focus button
-  gameCopy.classList.remove('finishMessage');
-  gameCopy.textContent = alphabet;
-  gameToArray();
-  drawScreen();
+  newGame(alphabet);
 }, false);
 
 var beginnerButton = document.getElementById('beginner');
 beginnerButton.addEventListener('click', function() {
   this.blur(); //de-focus button
-  gameCopy.classList.remove('finishMessage');
-  gameCopy.textContent = beginner;
-  gameToArray();
-  drawScreen();
+  newGame(beginner);
 }, false);
 
 var expertButton = document.getElementById('expert');
 expertButton.addEventListener('click', function() {
   this.blur(); //de-focus button
-  gameCopy.classList.remove('finishMessage');
-  gameCopy.textContent = expert;
-  gameToArray();
-  drawScreen();
+  newGame(expert);
 }, false);
 
-var leaderboardsButton = document.getElementById('toggle-leaderboards');
-leaderboardsButton.addEventListener('click', function() {
-  this.blur(); //de-focus button
-  var leaderboards = document.getElementById('leaderboards');
-  leaderboards.classList.toggle('hidden');
-}, false);
+// Called when a difficulty button is pressed
+var newGame = function(difficulty) {
+  gameCopy.classList.remove('finishMessage'); //remove finish screen css
+  gameCopy.textContent = difficulty;
+  gameToArray();
+  drawScreen();
+}
 
 // Convert selected difficulty into array
 var gameToArray = function() {
@@ -109,3 +101,11 @@ var finish = function() {
   }
   gameStatus = 'finished';
 }
+
+// Toggle leaderboard on webpage
+var leaderboardsButton = document.getElementById('toggle-leaderboards');
+leaderboardsButton.addEventListener('click', function() {
+  this.blur(); //de-focus button
+  var leaderboards = document.getElementById('leaderboards');
+  leaderboards.classList.toggle('hidden');
+}, false);
