@@ -101,6 +101,11 @@ var finish = function() {
   totalTime = (endTime - startTime) / 1000;
   var lpm = (gameArray.length / totalTime).toFixed(2);
   gameCopy.classList.add('finishMessage');
-  gameCopy.innerHTML = 'You typed <span class="highlight">' + lpm + '</span> letters per second with <span class="highlight">' + errors + '</span> errors!';
+  if (errors === 1) {
+    gameCopy.innerHTML = 'You typed <span class="highlight">' + lpm + '</span> letters per second with <span class="highlight">' + errors + '</span> error!';
+  }
+  else {
+    gameCopy.innerHTML = 'You typed <span class="highlight">' + lpm + '</span> letters per second with <span class="highlight">' + errors + '</span> errors!';
+  }
   gameStatus = 'finished';
 }
