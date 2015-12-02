@@ -25,8 +25,16 @@ expertButton.addEventListener('click', function() {
   newGame(expert);
 }, false);
 
+// Toggle leaderboard on webpage
+var leaderboardsButton = document.getElementById('toggle-leaderboards');
+leaderboardsButton.addEventListener('click', function() {
+  this.blur(); //de-focus button
+  var leaderboards = document.getElementById('leaderboards');
+  leaderboards.classList.toggle('hidden');
+}, false);
+
 // Called when a difficulty button is pressed
-var newGame = function(difficulty) {
+function newGame(difficulty) {
   gameCopy.classList.remove('finishMessage'); //remove finish screen css
   gameCopy.textContent = difficulty;
   gameToArray();
@@ -34,10 +42,36 @@ var newGame = function(difficulty) {
 }
 
 // Convert selected difficulty into array
-var gameToArray = function() {
+function gameToArray() {
   currentLocation = 0;
   gameArray = gameCopy.textContent.split('');
   currentLetter = gameArray[currentLocation];
+}
+
+// Redraws gamescreen on each correct keypress to highlight the current letter
+function drawScreen() {
+  if (currentLetter === ' ') {
+    gameArray[currentLocation] = '<span class="highlightSpace">' + currentLetter + '</span>';
+  } 
+  else {
+    gameArray[currentLocation] = '<span class="highlight">' + currentLetter + '</span>';
+  }
+  gameCopy.innerHTML = gameArray.join('');
+}
+
+// Displays win screen
+function finish() {
+  endTime = Date.now();
+  totalTime = (endTime - startTime) / 1000;
+  var lpm = (gameArray.length / totalTime).toFixed(2);
+  gameCopy.classList.add('finishMessage');
+  if (errors === 1) {
+    gameCopy.innerHTML = 'You typed <span class="highlight">' + lpm + '</span> letters per second with <span class="highlight">' + errors + '</span> error!';
+  }
+  else {
+    gameCopy.innerHTML = 'You typed <span class="highlight">' + lpm + '</span> letters per second with <span class="highlight">' + errors + '</span> errors!';
+  }
+  gameStatus = 'finished';
 }
 
 // Keypress listener
@@ -48,8 +82,7 @@ document.addEventListener('keypress', function(event) {
     || document.getElementById('user-age') === document.activeElement
     || document.getElementById('user-comments') === document.activeElement) {
   // Act normally (no preventDefault)
-  }
-  else {
+  } else {
     event.preventDefault(); //prevent space bar from scrolling window
     if (String.fromCharCode(event.which) === currentLetter) {
       gameArray[currentLocation] = currentLetter; //removes highlight from current letter
@@ -74,38 +107,4 @@ document.addEventListener('keypress', function(event) {
       errors = 0;
     }
   }
-}, false);
-
-// Redraws gamescreen on each correct keypress to highlight the current letter
-var drawScreen = function() {
-  if (currentLetter === ' ') {
-    gameArray[currentLocation] = '<span class="highlightSpace">' + currentLetter + '</span>';
-  } 
-  else {
-    gameArray[currentLocation] = '<span class="highlight">' + currentLetter + '</span>';
-  }
-  gameCopy.innerHTML = gameArray.join('');
-}
-
-// Displays win screen
-var finish = function() {
-  endTime = Date.now();
-  totalTime = (endTime - startTime) / 1000;
-  var lpm = (gameArray.length / totalTime).toFixed(2);
-  gameCopy.classList.add('finishMessage');
-  if (errors === 1) {
-    gameCopy.innerHTML = 'You typed <span class="highlight">' + lpm + '</span> letters per second with <span class="highlight">' + errors + '</span> error!';
-  }
-  else {
-    gameCopy.innerHTML = 'You typed <span class="highlight">' + lpm + '</span> letters per second with <span class="highlight">' + errors + '</span> errors!';
-  }
-  gameStatus = 'finished';
-}
-
-// Toggle leaderboard on webpage
-var leaderboardsButton = document.getElementById('toggle-leaderboards');
-leaderboardsButton.addEventListener('click', function() {
-  this.blur(); //de-focus button
-  var leaderboards = document.getElementById('leaderboards');
-  leaderboards.classList.toggle('hidden');
 }, false);
