@@ -38,6 +38,7 @@ highscoreButton.addEventListener('click', function() {
   this.blur();
   highscoreName = document.getElementById('highscore-name').value;
   update();
+  document.getElementById('submit-score').classList.toggle('hidden');
 }, false);
 
 // Called when a difficulty button is pressed
@@ -95,16 +96,12 @@ function update() {
   var leadername3 = document.getElementById('rank3Name');
   var leadername4 = document.getElementById('rank4Name');
   var leadername5 = document.getElementById('rank5Name');
-
   var rank1 = new Rank(leadername1.textContent, Number(leaderscore1.textContent));
   var rank2 = new Rank(leadername2.textContent, Number(leaderscore2.textContent));
   var rank3 = new Rank(leadername3.textContent, Number(leaderscore3.textContent));
   var rank4 = new Rank(leadername4.textContent, Number(leaderscore4.textContent));
   var rank5 = new Rank(leadername5.textContent, Number(leaderscore5.textContent));
-
   var myRank = new Rank(highscoreName, lpm);
-  console.log(myRank.name + myRank.score);
-
   var rankings = [rank1, rank2, rank3, rank4, rank5, myRank];
   rankings.sort(function (a,b) {
     if (a.score < b.score) {
@@ -115,30 +112,16 @@ function update() {
     }
     return 0;
   });
-
-
-  console.log(rankings);
-
-
-
-
-
-  if (myRank.score > rankings[0]) {
-    rankings.splice(0, 0, lpm);
-  } else if (myRank.score > rankings[1]) {
-    rankings.splice(1, 0, lpm);
-  } else if (myRank.score > rankings[2]) {
-    rankings.splice(2, 0, lpm);
-  } else if (myRank.score > rankings[3]) {
-    rankings.splice(3, 0, lpm);
-  } else if (myRank.score > rankings[4]) {
-    rankings.splice(4, 0, lpm);
-  }
-  leaderscore1.textContent = rankings[0];
-  leaderscore2.textContent = rankings[1];
-  leaderscore3.textContent = rankings[2];
-  leaderscore4.textContent = rankings[3];
-  leaderscore5.textContent = rankings[4];
+  leaderscore1.textContent = rankings[0].score;
+  leaderscore2.textContent = rankings[1].score;
+  leaderscore3.textContent = rankings[2].score;
+  leaderscore4.textContent = rankings[3].score;
+  leaderscore5.textContent = rankings[4].score;
+  leadername1.textContent = rankings[0].name;
+  leadername2.textContent = rankings[1].name;
+  leadername3.textContent = rankings[2].name;
+  leadername4.textContent = rankings[3].name;
+  leadername5.textContent = rankings[4].name;
 }
 
 function Rank(name, score) {
