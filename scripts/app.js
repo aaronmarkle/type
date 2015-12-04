@@ -89,6 +89,21 @@ function finish() {
   document.getElementById('submit-score').classList.toggle('hidden');
 }
 
+//Create first leaderboard with random scores
+document.getElementById('rank1Score').textContent = Math.floor((Math.random() * 10) +1);
+document.getElementById('rank2Score').textContent = Math.floor((Math.random() * 10) +1);
+document.getElementById('rank3Score').textContent = Math.floor((Math.random() * 10) +1);
+document.getElementById('rank4Score').textContent = Math.floor((Math.random() * 10) +1);
+document.getElementById('rank5Score').textContent = Math.floor((Math.random() * 10) +1);
+document.getElementById('rank1Name').textContent = 'Holly';
+document.getElementById('rank2Name').textContent = 'Aaron';
+document.getElementById('rank3Name').textContent = 'Khristian';
+document.getElementById('rank4Name').textContent = 'Adam';
+document.getElementById('rank5Name').textContent = 'Bobby';
+var highscoreName = '';
+var lpm = 0;
+update();
+
 //Update Leaderboard
 function update() {
   var leaderscore1 = document.getElementById('rank1Score');
