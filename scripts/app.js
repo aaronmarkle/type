@@ -77,21 +77,22 @@ function finish() {
 
 //Update Leaderboard
 function update() {
-  var rank1 = document.getElementById('rank1Score');
-  var rank2 = document.getElementById('rank2Score');
-  var rank3 = document.getElementById('rank3Score');
-  var rank4 = document.getElementById('rank4Score');
-  var rank5 = document.getElementById('rank5Score');
-  if (lpm > Number(rank1.textContent)) {
-    rank1.textContent = lpm;
-  } else if (lpm > Number(rank2.textContent)) {
-    rank2.textContent = lpm;
-  } else if (lpm > Number(rank3.textContent)) {
-    rank3.textContent = lpm;
-  } else if (lpm > Number(rank4.textContent)) {
-    rank4.textContent = lpm;
-  } else if (lpm > Number(rank5.textContent)) {
-    rank5.textContent = lpm;
+  var rank1 = Number(document.getElementById('rank1Score').textContent);
+  var rank2 = Number(document.getElementById('rank2Score').textContent);
+  var rank3 = Number(document.getElementById('rank3Score').textContent);
+  var rank4 = Number(document.getElementById('rank4Score').textContent);
+  var rank5 = Number(document.getElementById('rank5Score').textContent);
+  var rankings = [rank1, rank2, rank3, rank4, rank5];
+  if (lpm > rankings[0]) {
+    document.getElementById('rank1Score').textContent = lpm;
+  } else if (lpm > rankings[1]) {
+    document.getElementById('rank2Score').textContent = lpm;
+  } else if (lpm > rankings[2]) {
+    document.getElementById('rank3Score').textContent = lpm;
+  } else if (lpm > rankings[3]) {
+    document.getElementById('rank4Score').textContent = lpm;
+  } else if (lpm > rankings[4]) {
+    document.getElementById('rank5Score').textContent = lpm;
   }
 }
 
