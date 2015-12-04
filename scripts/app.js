@@ -36,7 +36,7 @@ leaderboardsButton.addEventListener('click', function() {
 var highscoreButton = document.getElementById('highscore-btn');
 highscoreButton.addEventListener('click', function() {
   this.blur();
-  var highscoreName = document.getElementById('highscore-name').value;
+  highscoreName = document.getElementById('highscore-name').value;
   update();
 }, false);
 
@@ -85,29 +85,55 @@ function finish() {
 
 //Update Leaderboard
 function update() {
-  var rank1 = document.getElementById('rank1Score');
-  var rank2 = document.getElementById('rank2Score');
-  var rank3 = document.getElementById('rank3Score');
-  var rank4 = document.getElementById('rank4Score');
-  var rank5 = document.getElementById('rank5Score');
-  var rankings = [rank1.textContent, rank2.textContent, rank3.textContent, rank4.textContent, rank5.textContent];
+  var leaderscore1 = document.getElementById('rank1Score');
+  var leaderscore2 = document.getElementById('rank2Score');
+  var leaderscore3 = document.getElementById('rank3Score');
+  var leaderscore4 = document.getElementById('rank4Score');
+  var leaderscore5 = document.getElementById('rank5Score');
+  var leadername1 = document.getElementById('rank1Name');
+  var leadername2 = document.getElementById('rank2Name');
+  var leadername3 = document.getElementById('rank3Name');
+  var leadername4 = document.getElementById('rank4Name');
+  var leadername5 = document.getElementById('rank5Name');
+
+  var rank1 = new Rank(leadername1.textContent, leaderscore1.textContent);
+  console.log(rank1.name + rank1.score);
+  var rank2 = new Rank(leadername2.textContent, leaderscore2.textContent);
+  console.log(rank2.name + rank2.score);
+  var rank3 = new Rank(leadername3.textContent, leaderscore3.textContent);
+  console.log(rank3.name + rank3.score);
+  var rank4 = new Rank(leadername4.textContent, leaderscore4.textContent);
+  console.log(rank4.name + rank4.score);
+  var rank5 = new Rank(leadername5.textContent, leaderscore5.textContent);
+  console.log(rank5.name + rank5.score);
+
+  var myRank = new Rank(highscoreName, lpm);
+  console.log(myRank.name + myRank.score);
+
+
+  var rankings = [rank1.score, rank2.score, rank3.score, rank4.score, rank5.score];
   rankings = rankings.map(Number);
-  if (lpm > rankings[0]) {
+  if (myRank.score > rankings[0]) {
     rankings.splice(0, 0, lpm);
-  } else if (lpm > rankings[1]) {
+  } else if (myRank.score > rankings[1]) {
     rankings.splice(1, 0, lpm);
-  } else if (lpm > rankings[2]) {
+  } else if (myRank.score > rankings[2]) {
     rankings.splice(2, 0, lpm);
-  } else if (lpm > rankings[3]) {
+  } else if (myRank.score > rankings[3]) {
     rankings.splice(3, 0, lpm);
-  } else if (lpm > rankings[4]) {
+  } else if (myRank.score > rankings[4]) {
     rankings.splice(4, 0, lpm);
   }
-  rank1.textContent = rankings[0];
-  rank2.textContent = rankings[1];
-  rank3.textContent = rankings[2];
-  rank4.textContent = rankings[3];
-  rank5.textContent = rankings[4];
+  leaderscore1.textContent = rankings[0];
+  leaderscore2.textContent = rankings[1];
+  leaderscore3.textContent = rankings[2];
+  leaderscore4.textContent = rankings[3];
+  leaderscore5.textContent = rankings[4];
+}
+
+function Rank(name, score) {
+  this.name = name,
+  this.score = score;
 }
 
 // Keypress listener
