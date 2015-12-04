@@ -63,7 +63,7 @@ function drawScreen() {
 function finish() {
   endTime = Date.now();
   totalTime = (endTime - startTime) / 1000;
-  var lpm = (gameArray.length / totalTime).toFixed(2);
+  lpm = (gameArray.length / totalTime).toFixed(2);
   gameCopy.classList.add('finishMessage');
   if (errors === 1) {
     gameCopy.innerHTML = 'You typed <span class="highlight">' + lpm + '</span> letters per second with <span class="highlight">' + errors + '</span> error!';
@@ -72,6 +72,27 @@ function finish() {
     gameCopy.innerHTML = 'You typed <span class="highlight">' + lpm + '</span> letters per second with <span class="highlight">' + errors + '</span> errors!';
   }
   gameStatus = 'finished';
+  update();
+}
+
+//Update Leaderboard
+function update() {
+  var rank1 = document.getElementById('rank1Score');
+  var rank2 = document.getElementById('rank2Score');
+  var rank3 = document.getElementById('rank3Score');
+  var rank4 = document.getElementById('rank4Score');
+  var rank5 = document.getElementById('rank5Score');
+  if (lpm > Number(rank1.textContent)) {
+    rank1.textContent = lpm;
+  } else if (lpm > Number(rank2.textContent)) {
+    rank2.textContent = lpm;
+  } else if (lpm > Number(rank3.textContent)) {
+    rank3.textContent = lpm;
+  } else if (lpm > Number(rank4.textContent)) {
+    rank4.textContent = lpm;
+  } else if (lpm > Number(rank5.textContent)) {
+    rank5.textContent = lpm;
+  }
 }
 
 // Keypress listener
