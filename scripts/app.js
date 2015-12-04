@@ -83,6 +83,7 @@ function update() {
   var rank4 = document.getElementById('rank4Score');
   var rank5 = document.getElementById('rank5Score');
   var rankings = [rank1.textContent, rank2.textContent, rank3.textContent, rank4.textContent, rank5.textContent];
+  rankings = rankings.map(Number);
   if (lpm > rankings[0]) {
     rankings.splice(0, 0, lpm);
   } else if (lpm > rankings[1]) {
