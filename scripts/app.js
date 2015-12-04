@@ -39,6 +39,7 @@ function newGame(difficulty) {
   gameCopy.textContent = difficulty;
   gameToArray();
   drawScreen();
+  document.getElementById('submit-score').classList.add('hidden');
 }
 
 // Convert selected difficulty into array
@@ -73,6 +74,11 @@ function finish() {
   }
   gameStatus = 'finished';
   update();
+  document.getElementById('submit-score').classList.toggle('hidden');
+
+
+
+
 }
 
 //Update Leaderboard
@@ -100,7 +106,6 @@ function update() {
   rank3.textContent = rankings[2];
   rank4.textContent = rankings[3];
   rank5.textContent = rankings[4];
-  console.log(rankings);
 }
 
 // Keypress listener
