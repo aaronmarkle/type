@@ -84,14 +84,19 @@ function update() {
   var rank5 = Number(document.getElementById('rank5Score').textContent);
   var rankings = [rank1, rank2, rank3, rank4, rank5];
   if (lpm > rankings[0]) {
+    rankings.splice(0, 0, lpm);
     document.getElementById('rank1Score').textContent = lpm;
   } else if (lpm > rankings[1]) {
+    rankings.splice(1, 0, lpm);
     document.getElementById('rank2Score').textContent = lpm;
   } else if (lpm > rankings[2]) {
+    rankings.splice(2, 0, lpm);
     document.getElementById('rank3Score').textContent = lpm;
   } else if (lpm > rankings[3]) {
+    rankings.splice(3, 0, lpm);
     document.getElementById('rank4Score').textContent = lpm;
   } else if (lpm > rankings[4]) {
+    rankings.splice(4, 0, lpm);
     document.getElementById('rank5Score').textContent = lpm;
   }
 }
