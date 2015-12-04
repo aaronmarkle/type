@@ -63,7 +63,7 @@ function drawScreen() {
 function finish() {
   endTime = Date.now();
   totalTime = (endTime - startTime) / 1000;
-  lpm = (gameArray.length / totalTime).toFixed(2);
+  lpm = Number((gameArray.length / totalTime).toFixed(2));
   gameCopy.classList.add('finishMessage');
   if (errors === 1) {
     gameCopy.innerHTML = 'You typed <span class="highlight">' + lpm + '</span> letters per second with <span class="highlight">' + errors + '</span> error!';
@@ -77,28 +77,29 @@ function finish() {
 
 //Update Leaderboard
 function update() {
-  var rank1 = Number(document.getElementById('rank1Score').textContent);
-  var rank2 = Number(document.getElementById('rank2Score').textContent);
-  var rank3 = Number(document.getElementById('rank3Score').textContent);
-  var rank4 = Number(document.getElementById('rank4Score').textContent);
-  var rank5 = Number(document.getElementById('rank5Score').textContent);
-  var rankings = [rank1, rank2, rank3, rank4, rank5];
+  var rank1 = document.getElementById('rank1Score');
+  var rank2 = document.getElementById('rank2Score');
+  var rank3 = document.getElementById('rank3Score');
+  var rank4 = document.getElementById('rank4Score');
+  var rank5 = document.getElementById('rank5Score');
+  var rankings = [rank1.textContent, rank2.textContent, rank3.textContent, rank4.textContent, rank5.textContent];
   if (lpm > rankings[0]) {
     rankings.splice(0, 0, lpm);
-    document.getElementById('rank1Score').textContent = lpm;
   } else if (lpm > rankings[1]) {
     rankings.splice(1, 0, lpm);
-    document.getElementById('rank2Score').textContent = lpm;
   } else if (lpm > rankings[2]) {
     rankings.splice(2, 0, lpm);
-    document.getElementById('rank3Score').textContent = lpm;
   } else if (lpm > rankings[3]) {
     rankings.splice(3, 0, lpm);
-    document.getElementById('rank4Score').textContent = lpm;
   } else if (lpm > rankings[4]) {
     rankings.splice(4, 0, lpm);
-    document.getElementById('rank5Score').textContent = lpm;
   }
+  rank1.textContent = rankings[0];
+  rank2.textContent = rankings[1];
+  rank3.textContent = rankings[2];
+  rank4.textContent = rankings[3];
+  rank5.textContent = rankings[4];
+  console.log(rankings);
 }
 
 // Keypress listener
