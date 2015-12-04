@@ -33,6 +33,13 @@ leaderboardsButton.addEventListener('click', function() {
   leaderboards.classList.toggle('hidden');
 }, false);
 
+var highscoreButton = document.getElementById('highscore-btn');
+highscoreButton.addEventListener('click', function() {
+  this.blur();
+  var highscoreName = document.getElementById('highscore-name').value;
+  update();
+}, false);
+
 // Called when a difficulty button is pressed
 function newGame(difficulty) {
   gameCopy.classList.remove('finishMessage'); //remove finish screen css
@@ -73,12 +80,7 @@ function finish() {
     gameCopy.innerHTML = 'You typed <span class="highlight">' + lpm + '</span> letters per second with <span class="highlight">' + errors + '</span> errors!';
   }
   gameStatus = 'finished';
-  update();
   document.getElementById('submit-score').classList.toggle('hidden');
-
-
-
-
 }
 
 //Update Leaderboard
@@ -114,7 +116,8 @@ document.addEventListener('keypress', function(event) {
   if (document.getElementById('user-name') === document.activeElement
     || document.getElementById('user-email') === document.activeElement
     || document.getElementById('user-age') === document.activeElement
-    || document.getElementById('user-comments') === document.activeElement) {
+    || document.getElementById('user-comments') === document.activeElement
+    || document.getElementById('highscore-name') === document.activeElement) {
   // Act normally (no preventDefault)
   } else {
     event.preventDefault(); //prevent space bar from scrolling window
