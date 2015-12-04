@@ -9,10 +9,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
-
   <button id="btn-feedback" class="btn btn-modal hidden-xs" data-toggle="modal" data-target="#feedback-modal" type="button">Submit Feedback <i class="fa fa-commenting-o"></i></button>
   <button id="btn-feedback" class="btn btn-sm btn-modal hidden-sm hidden-md hidden-lg" data-toggle="modal" data-target="#feedback-modal" type="button">Submit Feedback <i class="fa fa-commenting-o"></i></button>
-
   <div id="sorry" class="container-fluid hidden-sm hidden-md hidden-lg">
     <div class="col-xs-8 col-xs-offset-2">
       <img class="img-responsive" src="images/lego-helper.png">
@@ -20,10 +18,11 @@
   </div>
   <div class="container hidden-xs">
       <div class="row">
-      <div class="button-row col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 text-center">
+      <div class="button-row col-xs-12 col-xs-offset-0 col-sm-12 text-center">
         <button id="alphabet" class="btn btn-lg btn-orange btn-game hidden-xs">Alphabet</button>
         <button id="beginner" class="btn btn-lg btn-orange btn-game hidden-xs">Beginner</button>
         <button id="expert" class="btn btn-lg btn-orange btn-game hidden-xs">Expert</button>
+        <button id="toggle-leaderboards" class="btn btn-lg btn-orange hidden-xs">Toggle Leaderboards</button>
       </div>
     </div>
     <div class="row helper-holder">
@@ -34,61 +33,56 @@
             <input id="highscore-name" type="text" placeholder="Your name">
             <button id="highscore-btn" class="btn btn-orange">Submit Score</button>
           </div>
+          <!-- Leaderboards -->
+          <div id="leaderboards" class="container-fluid hidden-xs hidden">
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1 hidden-xs">
+                <table class="table table-striped rankings">
+                  <tr>
+                    <td class="timespan" colspan="3">Daily Rankings</td>
+                  </tr>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td id="rank1Name">Johnny</td>
+                    <td id="rank1Score">6</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td id="rank2Name">Jessica</td>
+                    <td id="rank2Score">5</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td id="rank3Name">Holly</td>
+                    <td id="rank3Score">4</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td id="rank4Name">Greg</td>
+                    <td id="rank4Score">3</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td id="rank5Name">Aaron</td>
+                    <td id="rank5Score">2</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- End of Leaderboards -->
         </div>
       </div>
       <div id="lego-helper" class="col-sm-4 col-lg-5">
         <img class="img-responsive" src="images/lego-helper.png">
       </div>
     </div>
-    <div class="footer text-center">
-      <button id="toggle-leaderboards" class="btn btn-lg btn-orange hidden-xs">Toggle Leaderboards</button>
-    </div>
   </div>
-
-<!-- Leaderboards -->
-  <div id="leaderboards" class="container-fluid hidden-xs">
-    <div class="row">
-      <div class="col-sm-4 col-sm-offset-4 hidden-xs">
-        <table class="table table-striped rankings">
-          <tr>
-            <td class="timespan" colspan="3">Daily</td>
-          </tr>
-          <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Score</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td id="rank1Name">Johnny</td>
-            <td id="rank1Score">6</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td id="rank2Name">Jessica</td>
-            <td id="rank2Score">5</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td id="rank3Name">Holly</td>
-            <td id="rank3Score">4</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td id="rank4Name">Greg</td>
-            <td id="rank4Score">3</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td id="rank5Name">Aaron</td>
-            <td id="rank5Score">2</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-<!-- End of Leaderboards -->
-
 <!-- Feedback Modal -->
   <div id="feedback-modal" class="modal fade" tabindex="-1">
     <div class="modal-dialog">
@@ -128,7 +122,6 @@
     </div>
   </div>
 <!-- End of Feedback Modal -->
-
 <script src="scripts/app.js"></script>
 </body>
 </html>

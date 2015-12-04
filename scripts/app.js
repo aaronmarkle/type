@@ -31,6 +31,7 @@ leaderboardsButton.addEventListener('click', function() {
   this.blur(); //de-focus button
   var leaderboards = document.getElementById('leaderboards');
   leaderboards.classList.toggle('hidden');
+  document.getElementById('game-copy').classList.toggle('hidden');
 }, false);
 
 var highscoreButton = document.getElementById('highscore-btn');
@@ -39,6 +40,8 @@ highscoreButton.addEventListener('click', function() {
   highscoreName = document.getElementById('highscore-name').value;
   update();
   document.getElementById('submit-score').classList.toggle('hidden');
+  document.getElementById('leaderboards').classList.toggle('hidden');
+  document.getElementById('game-copy').classList.toggle('hidden');
 }, false);
 
 // Called when a difficulty button is pressed
@@ -48,6 +51,8 @@ function newGame(difficulty) {
   gameToArray();
   drawScreen();
   document.getElementById('submit-score').classList.add('hidden');
+  document.getElementById('leaderboards').classList.add('hidden');
+  document.getElementById('game-copy').classList.remove('hidden');
 }
 
 // Convert selected difficulty into array
