@@ -96,23 +96,33 @@ function update() {
   var leadername4 = document.getElementById('rank4Name');
   var leadername5 = document.getElementById('rank5Name');
 
-  var rank1 = new Rank(leadername1.textContent, leaderscore1.textContent);
-  console.log(rank1.name + rank1.score);
-  var rank2 = new Rank(leadername2.textContent, leaderscore2.textContent);
-  console.log(rank2.name + rank2.score);
-  var rank3 = new Rank(leadername3.textContent, leaderscore3.textContent);
-  console.log(rank3.name + rank3.score);
-  var rank4 = new Rank(leadername4.textContent, leaderscore4.textContent);
-  console.log(rank4.name + rank4.score);
-  var rank5 = new Rank(leadername5.textContent, leaderscore5.textContent);
-  console.log(rank5.name + rank5.score);
+  var rank1 = new Rank(leadername1.textContent, Number(leaderscore1.textContent));
+  var rank2 = new Rank(leadername2.textContent, Number(leaderscore2.textContent));
+  var rank3 = new Rank(leadername3.textContent, Number(leaderscore3.textContent));
+  var rank4 = new Rank(leadername4.textContent, Number(leaderscore4.textContent));
+  var rank5 = new Rank(leadername5.textContent, Number(leaderscore5.textContent));
 
   var myRank = new Rank(highscoreName, lpm);
   console.log(myRank.name + myRank.score);
 
+  var rankings = [rank1, rank2, rank3, rank4, rank5, myRank];
+  rankings.sort(function (a,b) {
+    if (a.score < b.score) {
+      return 1;
+    }
+    if (a.score > b.score) {
+      return -1;
+    }
+    return 0;
+  });
 
-  var rankings = [rank1.score, rank2.score, rank3.score, rank4.score, rank5.score];
-  rankings = rankings.map(Number);
+
+  console.log(rankings);
+
+
+
+
+
   if (myRank.score > rankings[0]) {
     rankings.splice(0, 0, lpm);
   } else if (myRank.score > rankings[1]) {
