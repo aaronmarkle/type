@@ -1,0 +1,23 @@
+{
+  "leaders": [{
+    "rank": 1,
+    "name": "Holly",
+    "score": 10
+  }, {
+    "rank": 2,
+    "name": "Aaron",
+    "score": 8
+  }, {
+    "rank": 3,
+    "name": "Khristian",
+    "score": 6
+  }, {
+    "rank": 4,
+    "name": "Adam",
+    "score": 4
+  }, {
+    "rank": 5,
+    "name": "Bobby",
+    "score": 2
+  }]
+}
