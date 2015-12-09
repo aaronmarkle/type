@@ -89,25 +89,28 @@ function finish() {
   document.getElementById('submit-score').classList.toggle('hidden');
 }
 
-//Create first leaderboard with random scores
-var xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-    if(xhr.status === 200) {
-      responseObject = JSON.parse(xhr.responseText);
-      document.getElementById('rank1Score').textContent = responseObject.leaders[0].score;
-      document.getElementById('rank2Score').textContent = responseObject.leaders[1].score;
-      document.getElementById('rank3Score').textContent = responseObject.leaders[2].score;
-      document.getElementById('rank4Score').textContent = responseObject.leaders[3].score;
-      document.getElementById('rank5Score').textContent = responseObject.leaders[4].score;
-      document.getElementById('rank1Name').textContent = responseObject.leaders[0].name;
-      document.getElementById('rank2Name').textContent = responseObject.leaders[1].name;
-      document.getElementById('rank3Name').textContent = responseObject.leaders[2].name;
-      document.getElementById('rank4Name').textContent = responseObject.leaders[3].name;
-      document.getElementById('rank5Name').textContent = responseObject.leaders[4].name;
+//Grab leaderboard values from server
+function grabRankings() {
+  var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+      if(xhr.status === 200) {
+        responseObject = JSON.parse(xhr.responseText);
+        document.getElementById('rank1Score').textContent = responseObject.leaders[0].score;
+        document.getElementById('rank2Score').textContent = responseObject.leaders[1].score;
+        document.getElementById('rank3Score').textContent = responseObject.leaders[2].score;
+        document.getElementById('rank4Score').textContent = responseObject.leaders[3].score;
+        document.getElementById('rank5Score').textContent = responseObject.leaders[4].score;
+        document.getElementById('rank1Name').textContent = responseObject.leaders[0].name;
+        document.getElementById('rank2Name').textContent = responseObject.leaders[1].name;
+        document.getElementById('rank3Name').textContent = responseObject.leaders[2].name;
+        document.getElementById('rank4Name').textContent = responseObject.leaders[3].name;
+        document.getElementById('rank5Name').textContent = responseObject.leaders[4].name;
+      }
     }
-  }
-xhr.open('GET', 'http://127.0.0.1:1337/rankings.json', true);
-xhr.send(null);
+  xhr.open('GET', 'http://127.0.0.1:1337/rankings.json', true);
+  xhr.send(null);
+}
+grabRankings();
 
 var highscoreName = '';
 var lpm = 0;
