@@ -1,23 +1,40 @@
 {
-  "leaders": [{
-    "rank": 1,
-    "name": "Holly",
-    "score": 10
-  }, {
-    "rank": 2,
-    "name": "Aaron",
-    "score": 8
-  }, {
-    "rank": 3,
-    "name": "Khristian",
-    "score": 6
-  }, {
-    "rank": 4,
-    "name": "Adam",
-    "score": 4
-  }, {
-    "rank": 5,
-    "name": "Bobby",
-    "score": 2
-  }]
+  "leaders": [
+    {
+      "name": "Holly",
+      "score": 10
+    },
+    {
+      "name": "TEST",
+      "score": 9.18
+    },
+    {
+      "name": "Aaron",
+      "score": 8
+    },
+    {
+      "name": "test",
+      "score": 7.95
+    },
+    {
+      "name": "aaaaa",
+      "score": 7.37
+    },
+    {
+      "name": "aaaaa",
+      "score": 7.37
+    },
+    {
+      "name": "Khristian",
+      "score": 6
+    },
+    {
+      "name": "Adam",
+      "score": 4
+    },
+    {
+      "name": "Bobby",
+      "score": 2
+    }
+  ]
 }

@@ -38,7 +38,8 @@ var highscoreButton = document.getElementById('highscore-btn');
 highscoreButton.addEventListener('click', function() {
   this.blur();
   highscoreName = document.getElementById('highscore-name').value;
-  update();
+  sendRankings();
+  grabRankings();
   document.getElementById('submit-score').classList.toggle('hidden');
   document.getElementById('leaderboards').classList.toggle('hidden');
   document.getElementById('game-copy').classList.toggle('hidden');
@@ -114,51 +115,19 @@ grabRankings();
 
 var highscoreName = '';
 var lpm = 0;
-update();
-
-//Update Leaderboard
-function update() {
-  var leaderscore1 = document.getElementById('rank1Score');
-  var leaderscore2 = document.getElementById('rank2Score');
-  var leaderscore3 = document.getElementById('rank3Score');
-  var leaderscore4 = document.getElementById('rank4Score');
-  var leaderscore5 = document.getElementById('rank5Score');
-  var leadername1 = document.getElementById('rank1Name');
-  var leadername2 = document.getElementById('rank2Name');
-  var leadername3 = document.getElementById('rank3Name');
-  var leadername4 = document.getElementById('rank4Name');
-  var leadername5 = document.getElementById('rank5Name');
-  var rank1 = new Rank(leadername1.textContent, Number(leaderscore1.textContent));
-  var rank2 = new Rank(leadername2.textContent, Number(leaderscore2.textContent));
-  var rank3 = new Rank(leadername3.textContent, Number(leaderscore3.textContent));
-  var rank4 = new Rank(leadername4.textContent, Number(leaderscore4.textContent));
-  var rank5 = new Rank(leadername5.textContent, Number(leaderscore5.textContent));
-  var myRank = new Rank(highscoreName, lpm);
-  var rankings = [rank1, rank2, rank3, rank4, rank5, myRank];
-  rankings.sort(function (a,b) {
-    if (a.score < b.score) {
-      return 1;
-    }
-    if (a.score > b.score) {
-      return -1;
-    }
-    return 0;
-  });
-  leaderscore1.textContent = rankings[0].score;
-  leaderscore2.textContent = rankings[1].score;
-  leaderscore3.textContent = rankings[2].score;
-  leaderscore4.textContent = rankings[3].score;
-  leaderscore5.textContent = rankings[4].score;
-  leadername1.textContent = rankings[0].name;
-  leadername2.textContent = rankings[1].name;
-  leadername3.textContent = rankings[2].name;
-  leadername4.textContent = rankings[3].name;
-  leadername5.textContent = rankings[4].name;
-}
 
 function Rank(name, score) {
   this.name = name,
-  this.score = score;
+  this.score = score
+}
+
+// Send new leaderboard rankings
+function sendRankings() {
+  var myRank = new Rank(highscoreName, lpm);
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'http://127.0.0.1:1337/submitscore', true);
+  xhr.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+  xhr.send(JSON.stringify(myRank));
 }
 
 // Keypress listener
