@@ -108,7 +108,7 @@ function grabRankings() {
         document.getElementById('rank5Name').textContent = responseObject.leaders[4].name;
       }
     }
-  xhr.open('GET', 'http://127.0.0.1:1337/rankings.json', true);
+  xhr.open('GET', 'http://10.123.17.197:8080/rankings.json', true);
   xhr.send(null);
 }
 grabRankings();
@@ -125,7 +125,7 @@ function Rank(name, score) {
 function sendRankings() {
   var myRank = new Rank(highscoreName, lpm);
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'http://127.0.0.1:1337/submitscore', true);
+  xhr.open('POST', 'http://10.123.17.197:8080/submitscore', true);
   xhr.setRequestHeader('content-type', 'application/json;charset=UTF-8');
   xhr.send(JSON.stringify(myRank));
 }

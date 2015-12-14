@@ -31,5 +31,5 @@ app.use('/submitscore', jsonParser, function(req, res) {
 
 app.use('/', express.static(__dirname));
 
-app.listen(1337);
+app.listen(8080, '0.0.0.0');
 console.log('1337 is the magic port!');
